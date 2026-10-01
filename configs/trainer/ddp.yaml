@@ -1,0 +1,14 @@
+strategy: ddp
+epochs: 30
+batch_size_per_gpu: 128
+grad_accum: 1
+base_lr: 1.0e-3            # scaled by global_batch / 256
+weight_decay: 0.05
+warmup_epochs: 5
+clip: 1.0
+prefer_bf16: true          # fp16 automatically on T4
+channels_last: true
+compile: false
+num_workers: 4
+ema_decay: 0.9999
+checkpoint_every: 1

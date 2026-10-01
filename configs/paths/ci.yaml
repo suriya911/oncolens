@@ -1,0 +1,9 @@
+root: ${oc.env:RUNNER_TEMP,/tmp}/oncolens
+raw: ${paths.root}/raw
+shards: ${paths.root}/shards
+checkpoints: ${paths.root}/checkpoints
+artifacts: ${paths.root}/artifacts
+runs: ${paths.root}/runs
+tmp: ${paths.root}/tmp
+data_format: synthetic
+require_mount: false

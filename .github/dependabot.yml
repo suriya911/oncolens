@@ -1,0 +1,9 @@
+version: 2
+updates:
+  - package-ecosystem: pip
+    directory: "/"
+    schedule: { interval: weekly }
+  - package-ecosystem: github-actions
+    directory: "/"
+    schedule: { interval: weekly }
+  # docker (/deploy) and npm (/frontend) are added in Phases 15-16 when those folders exist

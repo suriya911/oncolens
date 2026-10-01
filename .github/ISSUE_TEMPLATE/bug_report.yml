@@ -1,0 +1,21 @@
+name: Bug report
+description: Something is broken
+labels: [bug]
+body:
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened
+      description: Command run, expected result, actual result (shortest decisive error line).
+    validations:
+      required: true
+  - type: input
+    id: phase
+    attributes:
+      label: Phase / step
+      placeholder: e.g. Phase 4, Step 4.3
+  - type: textarea
+    id: env
+    attributes:
+      label: Environment
+      description: Output of `python scripts/check_env.py` and `python -c "import torch; print(torch.__version__)"`

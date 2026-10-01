@@ -1,0 +1,56 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "oncolens"
+version = "0.1.0"
+description = "From-scratch, distributed multi-cancer detection and reporting (research prototype)"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+dependencies = [
+  "numpy", "pandas", "scipy", "scikit-learn",
+  "pillow", "opencv-python-headless", "albumentations", "imagehash",
+  "webdataset", "pydicom",
+  "hydra-core", "omegaconf", "wandb", "rich", "tqdm",
+  "onnx", "onnxruntime",
+  "fastapi", "uvicorn[standard]", "python-multipart", "pydantic>=2", "slowapi",
+  "jinja2", "weasyprint", "matplotlib",
+  "huggingface_hub",
+]
+
+[project.optional-dependencies]
+dev = ["pytest", "pytest-cov", "pytest-timeout", "httpx", "ruff", "mypy", "pre-commit", "dvc", "kaggle", "playwright"]
+distributed = ["deepspeed"]          # install on Kaggle; optional locally
+baselines = ["timm"]                 # reference baseline only
+gpu-infer = ["onnxruntime-gpu"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+extend-exclude = ["docs/PLAN.md"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP", "SIM"]
+
+[tool.ruff.lint.isort]
+known-first-party = ["oncolens"]
+
+[tool.mypy]
+python_version = "3.11"
+ignore_missing_imports = true
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+markers = [
+  "slow: long-running tests",
+  "gpu: requires a CUDA GPU",
+  "distributed: launches multiple processes",
+  "e2e: end-to-end tests requiring running services",
+  "data: requires datasets on ONCOLENS_ROOT",
+]
+addopts = "-q -m 'not gpu and not e2e and not data and not slow and not distributed'"

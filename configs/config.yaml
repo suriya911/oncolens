@@ -1,0 +1,12 @@
+defaults:
+  - paths: local
+  - data: synthetic
+  - model: simple_cnn
+  - trainer: single
+  - _self_
+
+seed: 0
+experiment_id: dev
+hydra:
+  run:
+    dir: ${paths.runs}/hydra/${experiment_id}/${now:%Y-%m-%d_%H-%M-%S}

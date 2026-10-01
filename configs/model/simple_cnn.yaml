@@ -1,0 +1,4 @@
+name: simple_cnn
+init: scratch            # only "scratch" allowed outside baselines/
+num_classes: ${data.num_classes}
+width: 32

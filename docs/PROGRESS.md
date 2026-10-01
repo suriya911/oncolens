@@ -11,7 +11,7 @@ Current phase: 2 | Mode: GUIDED | Last updated: 2026-10-01
 - [x] GATE 1: check_env.py passes (12/12, 2026-10-01)
 
 ## Phase 2: Repo & GitHub
-- [ ] 2.1 scaffold  - [ ] 2.2 storage/seed utils  - [ ] 2.3 pre-commit  - [ ] 2.4 workflows/templates  - [ ] 2.5 first tests  - [ ] 2.6 pushed + branch protection
+- [x] 2.1 scaffold  - [x] 2.2 storage/seed utils  - [x] 2.3 pre-commit  - [x] 2.4 workflows/templates (docker/deploy/healthcheck deferred to Phase 16)  - [x] 2.5 first tests (15 pass)  - [ ] 2.6 pushed + branch protection
 - [ ] GATE 2: CI green
 
 ## Phase 3: Data

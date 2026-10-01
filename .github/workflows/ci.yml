@@ -1,0 +1,46 @@
+name: ci
+on:
+  pull_request:
+  push:
+    branches: [main]
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+      - name: Install (CPU torch)
+        run: |
+          pip install torch torchvision --index-url https://download.pytorch.org/whl/cpu
+          pip install -e ".[dev]"
+      - name: Lint
+        run: ruff check . && ruff format --check .
+      - name: Types
+        run: mypy src/oncolens
+      - name: Unit + integration tests
+        run: pytest --cov=oncolens
+      - name: Distributed tests (2 CPU ranks, gloo)
+        # exit code 5 = no tests collected (until Phase 5 adds distributed tests)
+        run: pytest -m distributed || [ $? -eq 5 ]
+      - name: Guard - no pretrained weights in research code
+        run: |
+          ! grep -rnE "pretrained\s*=\s*True|weights\s*=\s*['\"A-Z]" src/oncolens --include=*.py | grep -v "src/oncolens/baselines/"
+  frontend:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        if: hashFiles('frontend/package-lock.json') != ''
+        with:
+          node-version: 20
+      - name: Lint + build
+        if: hashFiles('frontend/package-lock.json') != ''
+        working-directory: frontend
+        run: npm ci && npm run lint && npm run build

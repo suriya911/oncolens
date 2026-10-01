@@ -1,0 +1,11 @@
+# Data root is /mnt/g/oncolens-data, NOT /mnt/g/oncolens: Windows paths are case-insensitive,
+# so /mnt/g/oncolens would be the repo folder /mnt/g/OncoLens.
+root: ${oc.env:ONCOLENS_ROOT,/mnt/g/oncolens-data}
+raw: ${paths.root}/raw
+shards: ${paths.root}/shards
+checkpoints: ${paths.root}/checkpoints
+artifacts: ${paths.root}/artifacts
+runs: ${paths.root}/runs
+tmp: ${paths.root}/tmp
+data_format: webdataset
+require_mount: true

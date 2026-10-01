@@ -1,0 +1,15 @@
+name: Feature / experiment request
+description: Propose a feature or an experiment
+labels: [enhancement]
+body:
+  - type: textarea
+    id: idea
+    attributes:
+      label: Proposal
+    validations:
+      required: true
+  - type: input
+    id: rq
+    attributes:
+      label: Related research question
+      placeholder: RQ1 / RQ2 / RQ3 / RQ4 / none

@@ -1,0 +1,6 @@
+name: synthetic
+num_classes: 2
+image_size: 64
+channels: 3
+train_size: 512
+val_size: 128

@@ -1,0 +1,9 @@
+root: /kaggle/working
+raw: /kaggle/input
+shards: /kaggle/working/shards
+checkpoints: /kaggle/working/checkpoints
+artifacts: /kaggle/working/artifacts
+runs: /kaggle/working/runs
+tmp: /kaggle/working/tmp
+data_format: folder          # Kaggle inputs are already extracted on fast storage
+require_mount: false
