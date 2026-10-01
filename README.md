@@ -1,5 +1,7 @@
 # OncoLens
 
+[![ci](https://github.com/suriya911/oncolens/actions/workflows/ci.yml/badge.svg)](https://github.com/suriya911/oncolens/actions/workflows/ci.yml)
+
 **From-scratch, distributed multi-cancer detection and reporting system (research prototype).**
 
 > ⚠️ **Research prototype. Not a medical device. Not for clinical diagnosis.**
@@ -38,8 +40,8 @@ Each phase ends with a test gate. The next phase starts only when the gate passe
 |---|---|---|---|
 | 0 | Claude Code workspace (CLAUDE.md, settings, progress docs) | Files exist, first commit | ✅ Done |
 | 1 | Environment & storage (WSL, GPU, conda, data root on G:) | `scripts/check_env.py` passes | ✅ Done |
-| 2 | Repo scaffold, tooling, CI | ruff, mypy, pytest, CI green | ⏳ Next |
-| 3 | Data acquisition (zipped archives on G:) | Raw manifest + integrity tests | ⬜ |
+| 2 | Repo scaffold, tooling, CI | ruff, mypy, pytest, CI green | ✅ Done |
+| 3 | Data acquisition (zipped archives on G:) | Raw manifest + integrity tests | ⏳ Next |
 | 4 | Splits, leakage checks, WebDataset shards, I/O benchmark | Split, leakage, shard, transform tests | ⬜ |
 | 5 | Training engine (AMP, DDP, checkpointing, metrics) | Overfit, DDP-equivalence, resume tests | ⬜ |
 | 6 | First models from scratch (SimpleCNN, ResNet) | Model unit tests, PCam AUROC above chance | ⬜ |
@@ -54,6 +56,17 @@ Each phase ends with a test gate. The next phase starts only when the gate passe
 | 15 | FastAPI + Next.js frontend | API tests, e2e smoke | ⬜ |
 | 16 | Docker & free deployment | Public URL end to end | ⬜ |
 | 17 | Documentation, technical report, release v1.0.0 | Fresh clone reproduces evaluation | ⬜ |
+
+## Quickstart (development)
+
+```bash
+conda env create -f environment.yml && conda activate oncolens
+pip install torch torchvision --index-url https://download.pytorch.org/whl/cu128   # see pytorch.org
+pip install -e ".[dev]" && pre-commit install
+bash setup/storage_setup.sh /mnt/g/oncolens-data && source ~/.bashrc
+python scripts/check_env.py
+pytest                       # fast suite
+```
 
 ## Storage layout
 

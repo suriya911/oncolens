@@ -1,5 +1,5 @@
 # OncoLens Progress
-Current phase: 2 | Mode: GUIDED | Last updated: 2026-10-01
+Current phase: 3 | Mode: GUIDED | Last updated: 2026-10-01
 
 ## Phase 0: Workspace
 - [x] 0.1 CLAUDE.md  - [x] 0.2 settings.json  - [x] 0.3 PROGRESS.md  - [x] 0.4 research docs  - [x] 0.5 .gitignore/.env.example  - [x] 0.6 commit
@@ -11,8 +11,8 @@ Current phase: 2 | Mode: GUIDED | Last updated: 2026-10-01
 - [x] GATE 1: check_env.py passes (12/12, 2026-10-01)
 
 ## Phase 2: Repo & GitHub
-- [x] 2.1 scaffold  - [x] 2.2 storage/seed utils  - [x] 2.3 pre-commit  - [x] 2.4 workflows/templates (docker/deploy/healthcheck deferred to Phase 16)  - [x] 2.5 first tests (15 pass)  - [ ] 2.6 pushed + branch protection
-- [ ] GATE 2: CI green
+- [x] 2.1 scaffold  - [x] 2.2 storage/seed utils  - [x] 2.3 pre-commit  - [x] 2.4 workflows/templates (docker/deploy/healthcheck deferred to Phase 16)  - [x] 2.5 first tests (15 pass)  - [x] 2.6 pushed (branch protection: optional, user)
+- [x] GATE 2: CI green (run 36833771656, 2026-10-01)
 
 ## Phase 3: Data
 - [ ] 3.1 sources verified  - [ ] 3.2 downloads on G:  - [ ] 3.3 manifest
