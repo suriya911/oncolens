@@ -1,5 +1,5 @@
 # OncoLens Progress
-Current phase: 1 | Mode: GUIDED | Last updated: 2026-10-01
+Current phase: 2 | Mode: GUIDED | Last updated: 2026-10-01
 
 ## Phase 0: Workspace
 - [x] 0.1 CLAUDE.md  - [x] 0.2 settings.json  - [x] 0.3 PROGRESS.md  - [x] 0.4 research docs  - [x] 0.5 .gitignore/.env.example  - [x] 0.6 commit
@@ -7,8 +7,8 @@ Current phase: 1 | Mode: GUIDED | Last updated: 2026-10-01
 
 ## Phase 1: Environment & storage
 - [x] 1.1 WSL2 + nvidia-smi  - [x] 1.2 G: visible at /mnt/g  - [x] 1.3 .wslconfig (24 GB)  - [x] 1.4 storage on G: + env vars (write speed: 50.2 MB/s)
-- [x] 1.5 conda + torch (CUDA, bf16; torch 2.14.1+cu132)  - [ ] 1.6 logins (Kaggle, HF, W&B, gh)
-- [ ] GATE 1: check_env.py passes
+- [x] 1.5 conda + torch (CUDA, bf16; torch 2.14.1+cu132)  - [x] 1.6 logins (Kaggle, HF, W&B, gh)
+- [x] GATE 1: check_env.py passes (12/12, 2026-10-01)
 
 ## Phase 2: Repo & GitHub
 - [ ] 2.1 scaffold  - [ ] 2.2 storage/seed utils  - [ ] 2.3 pre-commit  - [ ] 2.4 workflows/templates  - [ ] 2.5 first tests  - [ ] 2.6 pushed + branch protection
@@ -76,4 +76,3 @@ Current phase: 1 | Mode: GUIDED | Last updated: 2026-10-01
 
 ## Open issues
 - Repo lives on G: (/mnt/g/OncoLens); git dir on SSD (~/git/oncolens.git); data root /mnt/g/oncolens-data. See LOG.md 2026-09-30.
-- Phase 1 pending: Kaggle API token only (HF, W&B, gh logged in). check_env: 11/12.

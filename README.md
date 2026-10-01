@@ -37,8 +37,8 @@ Each phase ends with a test gate. The next phase starts only when the gate passe
 | Phase | Module | Tests / gate | Status |
 |---|---|---|---|
 | 0 | Claude Code workspace (CLAUDE.md, settings, progress docs) | Files exist, first commit | ✅ Done |
-| 1 | Environment & storage (WSL, GPU, conda, data root on G:) | `scripts/check_env.py` passes | 🔄 In progress (11/12 checks; Kaggle token pending) |
-| 2 | Repo scaffold, tooling, CI | ruff, mypy, pytest, CI green | ⬜ |
+| 1 | Environment & storage (WSL, GPU, conda, data root on G:) | `scripts/check_env.py` passes | ✅ Done |
+| 2 | Repo scaffold, tooling, CI | ruff, mypy, pytest, CI green | ⏳ Next |
 | 3 | Data acquisition (zipped archives on G:) | Raw manifest + integrity tests | ⬜ |
 | 4 | Splits, leakage checks, WebDataset shards, I/O benchmark | Split, leakage, shard, transform tests | ⬜ |
 | 5 | Training engine (AMP, DDP, checkpointing, metrics) | Overfit, DDP-equivalence, resume tests | ⬜ |
