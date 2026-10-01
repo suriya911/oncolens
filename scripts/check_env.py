@@ -15,7 +15,7 @@ MIN_FREE_GB = 150
 EXPECTED_DRIVE = "/mnt/g"
 
 CREDENTIAL_FILES = {
-    "Kaggle": [Path.home() / ".kaggle" / "kaggle.json"],
+    "Kaggle": [Path.home() / ".kaggle" / "kaggle.json", Path.home() / ".kaggle" / "access_token"],
     "Hugging Face": [Path.home() / ".cache" / "huggingface" / "token"],
     "Weights & Biases": [Path.home() / ".netrc", Path.home() / ".config" / "wandb" / "settings"],
     "GitHub CLI": [Path.home() / ".config" / "gh" / "hosts.yml"],

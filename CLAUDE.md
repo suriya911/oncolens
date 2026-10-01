@@ -49,7 +49,7 @@ Explain concepts briefly and precisely before implementing them. Keep the user i
 - Secrets: never read/print .env, ~/.kaggle, ~/.ssh, ~/.netrc, or tokens. Never ask the user to paste a key.
 - Check torch version before using FSDP / distributed checkpoint / torch.compile APIs.
 - Report results exactly as measured, including negative results. Never tune on the test set.
-- Conventional commits: feat(...), fix(...), test(...), docs(...), exp(...).
+- Conventional commits: feat(...), fix(...), test(...), docs(...), exp(...). No Claude co-author or "Generated with Claude" lines in commits or PRs.
 
 ## Common commands
 - Fast tests: `pytest`

@@ -6,8 +6,8 @@ Current phase: 1 | Mode: GUIDED | Last updated: 2026-10-01
 - [x] GATE 0
 
 ## Phase 1: Environment & storage
-- [x] 1.1 WSL2 + nvidia-smi  - [x] 1.2 G: visible at /mnt/g  - [ ] 1.3 .wslconfig (24 GB)  - [x] 1.4 storage on G: + env vars (write speed: 50.2 MB/s)
-- [ ] 1.5 conda + torch (CUDA, bf16)  - [ ] 1.6 logins (Kaggle, HF, W&B, gh)
+- [x] 1.1 WSL2 + nvidia-smi  - [x] 1.2 G: visible at /mnt/g  - [x] 1.3 .wslconfig (24 GB)  - [x] 1.4 storage on G: + env vars (write speed: 50.2 MB/s)
+- [x] 1.5 conda + torch (CUDA, bf16; torch 2.14.1+cu132)  - [ ] 1.6 logins (Kaggle, HF, W&B, gh)
 - [ ] GATE 1: check_env.py passes
 
 ## Phase 2: Repo & GitHub
@@ -76,4 +76,4 @@ Current phase: 1 | Mode: GUIDED | Last updated: 2026-10-01
 
 ## Open issues
 - Repo lives on G: (/mnt/g/OncoLens); git dir on SSD (~/git/oncolens.git); data root /mnt/g/oncolens-data. See LOG.md 2026-09-30.
-- Phase 1 pending: 1.3 .wslconfig, 1.5 conda + torch, 1.6 Kaggle/HF/W&B logins (gh done).
+- Phase 1 pending: Kaggle API token only (HF, W&B, gh logged in). check_env: 11/12.
