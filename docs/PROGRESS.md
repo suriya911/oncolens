@@ -1,12 +1,12 @@
 # OncoLens Progress
-Current phase: 0 | Mode: GUIDED | Last updated: 2026-09-30
+Current phase: 1 | Mode: GUIDED | Last updated: 2026-10-01
 
 ## Phase 0: Workspace
 - [x] 0.1 CLAUDE.md  - [x] 0.2 settings.json  - [x] 0.3 PROGRESS.md  - [x] 0.4 research docs  - [x] 0.5 .gitignore/.env.example  - [x] 0.6 commit
-- [ ] GATE 0
+- [x] GATE 0
 
 ## Phase 1: Environment & storage
-- [ ] 1.1 WSL2 + nvidia-smi  - [ ] 1.2 G: visible at /mnt/g  - [ ] 1.3 .wslconfig (24 GB)  - [ ] 1.4 storage on G: + env vars (write speed: ___ MB/s)
+- [x] 1.1 WSL2 + nvidia-smi  - [x] 1.2 G: visible at /mnt/g  - [ ] 1.3 .wslconfig (24 GB)  - [x] 1.4 storage on G: + env vars (write speed: 50.2 MB/s)
 - [ ] 1.5 conda + torch (CUDA, bf16)  - [ ] 1.6 logins (Kaggle, HF, W&B, gh)
 - [ ] GATE 1: check_env.py passes
 
@@ -76,4 +76,4 @@ Current phase: 0 | Mode: GUIDED | Last updated: 2026-09-30
 
 ## Open issues
 - Repo lives on G: (/mnt/g/OncoLens); git dir on SSD (~/git/oncolens.git); data root /mnt/g/oncolens-data. See LOG.md 2026-09-30.
-- GitHub: waiting for user to install `gh` and run `gh auth login`.
+- Phase 1 pending: 1.3 .wslconfig, 1.5 conda + torch, 1.6 Kaggle/HF/W&B logins (gh done).
